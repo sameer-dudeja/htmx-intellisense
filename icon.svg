@@ -1,0 +1,32 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Circular mask for clipping -->
+    <clipPath id="circle-clip">
+      <circle cx="64" cy="64" r="60"/>
+    </clipPath>
+  </defs>
+  
+  <!-- Background -->
+  <circle cx="64" cy="64" r="60" fill="#0f83db"/>
+  
+  <!-- Horizontal lines pattern -->
+  <g clip-path="url(#circle-clip)">
+    <!-- White lines -->
+    <rect x="4" y="8" width="120" height="3" fill="white" opacity="0.9"/>
+    <rect x="4" y="16" width="120" height="3" fill="white" opacity="0.9"/>
+    <rect x="4" y="24" width="120" height="3" fill="white" opacity="0.9"/>
+    <rect x="4" y="32" width="120" height="3" fill="white" opacity="0.9"/>
+    <rect x="4" y="40" width="120" height="3" fill="white" opacity="0.9"/>
+    <rect x="4" y="48" width="120" height="3" fill="#1d426e" opacity="0.9"/>
+    <rect x="4" y="72" width="120" height="3" fill="#1d426e" opacity="0.9"/>
+    <rect x="4" y="80" width="120" height="3" fill="white" opacity="0.9"/>
+    <rect x="4" y="88" width="120" height="3" fill="white" opacity="0.9"/>
+    <rect x="4" y="96" width="120" height="3" fill="white" opacity="0.9"/>
+    <rect x="4" y="104" width="120" height="3" fill="white" opacity="0.9"/>
+    <rect x="4" y="112" width="120" height="3" fill="white" opacity="0.9"/>
+    <rect x="4" y="120" width="120" height="3" fill="white" opacity="0.9"/>
+  </g>
+  
+  <!-- HTMX Text -->`
+  <text x="64" y="68" font-family="Montserrat, Arial, sans-serif" font-size="18" font-weight="bold" fill="white" text-anchor="middle">&lt;HTMX&gt;</text>
+</svg> 

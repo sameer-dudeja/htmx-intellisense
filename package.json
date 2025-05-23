@@ -1,0 +1,106 @@
+{
+  "name": "htmx-intellisense",
+  "displayName": "HTMX IntelliSense",
+  "description": "Smart code completion, emmet support, and IntelliSense for HTMX attributes and patterns",
+  "version": "1.0.0",
+  "publisher": "sameer-dudeja",
+  "license": "MIT",
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sameer-dudeja/htmx-intellisense.git"
+  },
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Other",
+    "Programming Languages",
+    "Snippets"
+  ],
+  "keywords": [
+    "htmx",
+    "html",
+    "autocomplete",
+    "intellisense",
+    "emmet"
+  ],
+  "activationEvents": [
+    "onLanguage:html",
+    "onLanguage:htm",
+    "onLanguage:htmx"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "htmx",
+        "aliases": [
+          "HTMX",
+          "htmx"
+        ],
+        "extensions": [
+          ".htmx"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "htmx",
+        "scopeName": "text.html.htmx",
+        "path": "./syntaxes/htmx.tmLanguage.json",
+        "embeddedLanguages": {
+          "text.html": "html",
+          "source.css": "css",
+          "source.js": "javascript"
+        }
+      }
+    ],
+    "snippets": [
+      {
+        "language": "html",
+        "path": "./snippets/htmx.json"
+      },
+      {
+        "language": "htmx",
+        "path": "./snippets/htmx.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "htmx-intellisense.insertTemplate",
+        "title": "Insert HTMX Template",
+        "category": "HTMX"
+      }
+    ],
+    "configuration": {
+      "title": "HTMX IntelliSense",
+      "properties": {
+        "htmx-intellisense.enableAutoCompletion": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable HTMX attribute auto-completion"
+        },
+        "htmx-intellisense.enableHoverInfo": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show hover information for HTMX attributes"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "echo 'Linting skipped - add eslint if needed'",
+    "package": "npx vsce package --no-git-tag-version"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.21",
+    "@types/vscode": "^1.96.0",
+    "@vscode/vsce": "^3.4.2",
+    "typescript": "^5"
+  }
+}

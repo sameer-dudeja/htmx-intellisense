@@ -1,0 +1,125 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "HTMX",
+    "scopeName": "text.html.htmx",
+    "patterns": [
+        {
+            "include": "text.html.basic"
+        },
+        {
+            "include": "#htmx-attributes"
+        }
+    ],
+    "repository": {
+        "htmx-attributes": {
+            "patterns": [
+                {
+                    "name": "entity.other.attribute-name.htmx",
+                    "match": "\\b(hx-(?:get|post|put|patch|delete|trigger|target|swap|vals|confirm|push-url|select|select-oob|swap-oob|include|indicator|params|boost|encoding|ext|headers|history|history-elt|request|sync|validate|vars|disinherit|preserve|prompt|replace-url|disabled-elt|loading-states))\\b"
+                },
+                {
+                    "name": "entity.other.attribute-name.htmx.event-handler",
+                    "match": "\\b(hx-on:[\\w:-]+)\\b"
+                },
+                {
+                    "begin": "(hx-(?:get|post|put|patch|delete|trigger|target|swap|vals|confirm|push-url|select|select-oob|swap-oob|include|indicator|params|boost|encoding|ext|headers|history|history-elt|request|sync|validate|vars|disinherit|preserve|prompt|replace-url|disabled-elt|loading-states))\\s*=\\s*([\"'])",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.htmx"
+                        },
+                        "2": {
+                            "name": "punctuation.definition.string.begin.html"
+                        }
+                    },
+                    "end": "\\2",
+                    "endCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.string.end.html"
+                        }
+                    },
+                    "name": "string.quoted.htmx",
+                    "patterns": [
+                        {
+                            "include": "#htmx-attribute-values"
+                        }
+                    ]
+                },
+                {
+                    "begin": "(hx-on:[\\w:-]+)\\s*=\\s*([\"'])",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "entity.other.attribute-name.htmx.event-handler"
+                        },
+                        "2": {
+                            "name": "punctuation.definition.string.begin.html"
+                        }
+                    },
+                    "end": "\\2",
+                    "endCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.string.end.html"
+                        }
+                    },
+                    "name": "string.quoted.htmx.javascript",
+                    "patterns": [
+                        {
+                            "include": "source.js"
+                        }
+                    ]
+                }
+            ]
+        },
+        "htmx-attribute-values": {
+            "patterns": [
+                {
+                    "name": "keyword.other.htmx.swap-method",
+                    "match": "\\b(innerHTML|outerHTML|beforebegin|afterbegin|beforeend|afterend|delete|none)\\b"
+                },
+                {
+                    "name": "keyword.other.htmx.trigger-event",
+                    "match": "\\b(click|change|keyup|keydown|submit|load|revealed|intersect|mouseenter|mouseleave|focus|blur)\\b"
+                },
+                {
+                    "name": "keyword.other.htmx.trigger-modifier",
+                    "match": "\\b(once|changed|delay|throttle|from|target|consume|queue)\\b"
+                },
+                {
+                    "name": "keyword.other.htmx.target-selector",
+                    "match": "\\b(this|closest|find|next|previous)\\b"
+                },
+                {
+                    "name": "constant.language.boolean.htmx",
+                    "match": "\\b(true|false)\\b"
+                },
+                {
+                    "name": "string.other.css-selector.htmx",
+                    "match": "#[a-zA-Z][a-zA-Z0-9_-]*"
+                },
+                {
+                    "name": "string.other.css-selector.htmx",
+                    "match": "\\.[a-zA-Z][a-zA-Z0-9_-]*"
+                },
+                {
+                    "name": "constant.numeric.htmx",
+                    "match": "\\b\\d+(?:\\.\\d+)?(?:s|ms)\\b"
+                },
+                {
+                    "name": "string.other.url.htmx",
+                    "match": "\\/[^\\s\"']*"
+                },
+                {
+                    "name": "support.function.htmx",
+                    "match": "javascript:"
+                },
+                {
+                    "name": "punctuation.definition.parameters.begin.htmx",
+                    "match": "\\{"
+                },
+                {
+                    "name": "punctuation.definition.parameters.end.htmx",
+                    "match": "\\}"
+                }
+            ]
+        }
+    }
+} 

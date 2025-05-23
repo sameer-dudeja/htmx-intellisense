@@ -1,0 +1,255 @@
+{
+    "HTMX Basic GET": {
+        "prefix": "hx-get",
+        "body": [
+            "hx-get=\"${1:url}\" hx-target=\"${2:#target}\" hx-swap=\"${3:innerHTML}\""
+        ],
+        "description": "Basic HTMX GET request with target and swap"
+    },
+    "HTMX Basic POST": {
+        "prefix": "hx-post",
+        "body": [
+            "hx-post=\"${1:url}\" hx-target=\"${2:#target}\" hx-swap=\"${3:innerHTML}\""
+        ],
+        "description": "Basic HTMX POST request with target and swap"
+    },
+    "HTMX Form": {
+        "prefix": "htmx-form",
+        "body": [
+            "<form hx-post=\"${1:/submit}\" hx-target=\"${2:#result}\" hx-swap=\"${3:innerHTML}\">",
+            "    ${4:<!-- form content -->}",
+            "    <button type=\"submit\">${5:Submit}</button>",
+            "</form>"
+        ],
+        "description": "HTMX enhanced form"
+    },
+    "HTMX Button with Confirmation": {
+        "prefix": "htmx-button-confirm",
+        "body": [
+            "<button hx-delete=\"${1:/delete}\" hx-confirm=\"${2:Are you sure?}\" hx-target=\"${3:#target}\" hx-swap=\"${4:outerHTML}\">",
+            "    ${5:Delete}",
+            "</button>"
+        ],
+        "description": "HTMX button with confirmation dialog"
+    },
+    "HTMX Load More": {
+        "prefix": "htmx-load-more",
+        "body": [
+            "<button hx-get=\"${1:/load-more}\" hx-target=\"${2:#items}\" hx-swap=\"${3:beforeend}\" hx-vals='${4:{\"page\": 2}}'>",
+            "    ${5:Load More}",
+            "</button>"
+        ],
+        "description": "Load more content pattern"
+    },
+    "HTMX Search Input": {
+        "prefix": "htmx-search",
+        "body": [
+            "<input type=\"text\" ",
+            "       hx-get=\"${1:/search}\" ",
+            "       hx-trigger=\"${2:keyup changed delay:500ms}\" ",
+            "       hx-target=\"${3:#search-results}\" ",
+            "       placeholder=\"${4:Search...}\">"
+        ],
+        "description": "Search input with delayed trigger"
+    },
+    "HTMX Infinite Scroll": {
+        "prefix": "htmx-infinite-scroll",
+        "body": [
+            "<div hx-get=\"${1:/next-page}\" ",
+            "     hx-trigger=\"${2:revealed}\" ",
+            "     hx-target=\"${3:this}\" ",
+            "     hx-swap=\"${4:outerHTML}\">",
+            "    ${5:<!-- Loading indicator -->}",
+            "</div>"
+        ],
+        "description": "Infinite scroll trigger element"
+    },
+    "HTMX Modal Trigger": {
+        "prefix": "htmx-modal",
+        "body": [
+            "<button hx-get=\"${1:/modal-content}\" ",
+            "        hx-target=\"${2:#modal-body}\" ",
+            "        hx-swap=\"${3:innerHTML}\" ",
+            "        data-bs-toggle=\"modal\" ",
+            "        data-bs-target=\"${4:#modal}\">",
+            "    ${5:Open Modal}",
+            "</button>"
+        ],
+        "description": "Button that loads content into a modal"
+    },
+    "HTMX Polling": {
+        "prefix": "htmx-poll",
+        "body": [
+            "<div hx-get=\"${1:/status}\" ",
+            "     hx-trigger=\"${2:every 2s}\" ",
+            "     hx-target=\"${3:this}\" ",
+            "     hx-swap=\"${4:innerHTML}\">",
+            "    ${5:<!-- Initial content -->}",
+            "</div>"
+        ],
+        "description": "Auto-polling content"
+    },
+    "HTMX Progress Indicator": {
+        "prefix": "htmx-progress",
+        "body": [
+            "<div id=\"${1:progress}\" class=\"htmx-indicator\">",
+            "    ${2:Loading...}",
+            "</div>",
+            "<button hx-post=\"${3:/upload}\" ",
+            "        hx-indicator=\"${4:#progress}\" ",
+            "        hx-target=\"${5:#result}\">",
+            "    ${6:Upload}",
+            "</button>"
+        ],
+        "description": "Progress indicator pattern"
+    },
+    "HTMX Table Row Update": {
+        "prefix": "htmx-table-row",
+        "body": [
+            "<tr id=\"${1:row-id}\">",
+            "    <td>${2:data}</td>",
+            "    <td>",
+            "        <button hx-get=\"${3:/edit}\" ",
+            "                hx-target=\"${4:closest tr}\" ",
+            "                hx-swap=\"${5:outerHTML}\">",
+            "            ${6:Edit}",
+            "        </button>",
+            "    </td>",
+            "</tr>"
+        ],
+        "description": "Editable table row"
+    },
+    "HTMX Dependent Dropdown": {
+        "prefix": "htmx-dependent-select",
+        "body": [
+            "<select hx-get=\"${1:/options}\" ",
+            "        hx-trigger=\"${2:change}\" ",
+            "        hx-target=\"${3:#dependent-select}\" ",
+            "        hx-swap=\"${4:innerHTML}\">",
+            "    <option value=\"\">${5:Choose...}</option>",
+            "    ${6:<!-- options -->}",
+            "</select>"
+        ],
+        "description": "Select that updates another select"
+    },
+    "HTMX Out of Band Swap": {
+        "prefix": "htmx-oob",
+        "body": [
+            "<div id=\"${1:main-content}\">",
+            "    ${2:<!-- Main content -->}",
+            "</div>",
+            "<div id=\"${3:sidebar}\" hx-swap-oob=\"${4:true}\">",
+            "    ${5:<!-- Updated sidebar content -->}",
+            "</div>"
+        ],
+        "description": "Out of band content update"
+    },
+    "HTMX WebSocket": {
+        "prefix": "htmx-ws",
+        "body": [
+            "<div hx-ext=\"ws\" ws-connect=\"${1:/chatroom}\">",
+            "    <div id=\"${2:messages}\"></div>",
+            "    <form ws-send>",
+            "        <input name=\"${3:message}\" placeholder=\"${4:Type a message...}\">",
+            "        <button type=\"submit\">${5:Send}</button>",
+            "    </form>",
+            "</div>"
+        ],
+        "description": "WebSocket connection with messaging"
+    },
+    "HTMX File Upload": {
+        "prefix": "htmx-upload",
+        "body": [
+            "<form hx-post=\"${1:/upload}\" ",
+            "      hx-encoding=\"multipart/form-data\" ",
+            "      hx-target=\"${2:#upload-result}\" ",
+            "      hx-indicator=\"${3:#upload-progress}\">",
+            "    <input type=\"file\" name=\"${4:file}\" required>",
+            "    <button type=\"submit\">${5:Upload}</button>",
+            "    <div id=\"upload-progress\" class=\"htmx-indicator\">${6:Uploading...}</div>",
+            "</form>"
+        ],
+        "description": "File upload form with progress indicator"
+    },
+    "HTMX Basic Template": {
+        "prefix": "htmx-template",
+        "body": [
+            "<!DOCTYPE html>",
+            "<html lang=\"en\">",
+            "<head>",
+            "    <meta charset=\"UTF-8\">",
+            "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+            "    <title>${1:HTMX App}</title>",
+            "    <script src=\"https://unpkg.com/htmx.org@2.0.0\"></script>",
+            "    ${2:<!-- Additional CSS/JS -->}",
+            "</head>",
+            "<body>",
+            "    <div id=\"content\">",
+            "        ${3:<!-- Your HTMX content here -->}",
+            "    </div>",
+            "</body>",
+            "</html>"
+        ],
+        "description": "Basic HTMX v2 HTML template"
+    },
+    "HTMX v2 Event Handler": {
+        "prefix": "hx-on",
+        "body": [
+            "hx-on:${1:click}=\"${2:console.log('Event triggered')}\""
+        ],
+        "description": "HTMX v2 event handler with hx-on: syntax"
+    },
+    "HTMX v2 Before Request": {
+        "prefix": "hx-on-before-request",
+        "body": [
+            "hx-on:htmx:before-request=\"${1:console.log('Request starting', event.detail)}\""
+        ],
+        "description": "HTMX v2 before request event handler"
+    },
+    "HTMX v2 After Request": {
+        "prefix": "hx-on-after-request",
+        "body": [
+            "hx-on:htmx:after-request=\"${1:console.log('Request completed', event.detail)}\""
+        ],
+        "description": "HTMX v2 after request event handler"
+    },
+    "HTMX v2 Before Swap": {
+        "prefix": "hx-on-before-swap",
+        "body": [
+            "hx-on:htmx:before-swap=\"${1:console.log('About to swap content', event.detail)}\""
+        ],
+        "description": "HTMX v2 before swap event handler"
+    },
+    "HTMX v2 After Swap": {
+        "prefix": "hx-on-after-swap",
+        "body": [
+            "hx-on:htmx:after-swap=\"${1:console.log('Content swapped', event.detail)}\""
+        ],
+        "description": "HTMX v2 after swap event handler"
+    },
+    "HTMX v2 Button with Events": {
+        "prefix": "htmx-v2-button",
+        "body": [
+            "<button hx-get=\"${1:/api/data}\" ",
+            "        hx-target=\"${2:#result}\" ",
+            "        hx-on:htmx:before-request=\"${3:this.disabled=true}\" ",
+            "        hx-on:htmx:after-request=\"${4:this.disabled=false}\">",
+            "    ${5:Load Data}",
+            "</button>"
+        ],
+        "description": "HTMX v2 button with event handlers"
+    },
+    "HTMX v2 Form with Validation": {
+        "prefix": "htmx-v2-form",
+        "body": [
+            "<form hx-post=\"${1:/submit}\" ",
+            "      hx-target=\"${2:#result}\" ",
+            "      hx-on:htmx:before-request=\"${3:return validateForm(this)}\" ",
+            "      hx-on:htmx:after-request=\"${4:resetForm(this)}\">",
+            "    ${5:<!-- form content -->}",
+            "    <button type=\"submit\">${6:Submit}</button>",
+            "</form>"
+        ],
+        "description": "HTMX v2 form with validation events"
+    }
+} 

@@ -1,0 +1,27 @@
+# Development files
+.vscode/**
+.vscode-test/**
+src/**
+.gitignore
+.yarnrc
+vsc-extension-quickstart.md
+**/tsconfig.json
+**/.eslintrc.json
+**/*.map
+**/*.ts
+
+# Dependencies
+node_modules/**
+
+# Development scripts
+index.ts
+
+# Documentation for development
+*.md
+!README.md
+
+# License file should be included
+!LICENSE
+
+# Icon should be included
+!icon.png 
