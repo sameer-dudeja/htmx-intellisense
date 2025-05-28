@@ -1,7 +1,7 @@
 {
   "name": "htmx-intellisense",
   "displayName": "HTMX IntelliSense",
-  "description": "Smart code completion, emmet support, and IntelliSense for HTMX attributes and patterns",
+  "description": "Community-developed VS Code extension: Smart code completion, emmet support, and IntelliSense for HTMX v2 with full extension support and backward compatibility",
   "version": "1.0.0",
   "publisher": "sameer-dudeja",
   "license": "MIT",
@@ -20,10 +20,15 @@
   ],
   "keywords": [
     "htmx",
+    "htmx2",
+    "htmx-v2",
     "html",
     "autocomplete",
     "intellisense",
-    "emmet"
+    "emmet",
+    "extensions",
+    "hx-on",
+    "events"
   ],
   "activationEvents": [
     "onLanguage:html",

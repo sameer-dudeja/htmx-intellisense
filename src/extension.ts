@@ -80,7 +80,18 @@ const HTMX_ATTRIBUTES: Record<string, { description: string; values: string[] }>
     },
     'hx-ext': {
         description: 'Extensions to use for this element',
-        values: ['json-enc', 'morphdom', 'alpine-morph', 'class-tools', 'remove-me', 'ws', 'sse']
+        values: [
+            // Official Extensions (bigskysoftware/htmx-extensions)
+            'debug', 'ws', 'sse', 'head-support', 'response-targets', 'preload', 'idiomorph',
+            
+            // Third-party Extensions (Community)
+            'json-enc', 'client-side-templates', 'class-tools', 'loading-states', 'alpine-morph',
+            'ajax-header', 'event-header', 'path-deps', 'path-params', 'remove-me', 'restored',
+            'method-override', 'include-vals', 'disable-element',
+            
+            // Additional Community Extensions
+            'multi-swap', 'morphdom-swap', 'no-cache'
+        ]
     },
     'hx-headers': {
         description: 'Adds to the headers that will be submitted with the request',
