@@ -2,7 +2,7 @@
   "name": "htmx-intellisense",
   "displayName": "HTMX IntelliSense",
   "description": "Community-developed VS Code extension: Smart code completion, emmet support, and IntelliSense for HTMX v2 with full extension support and backward compatibility",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "sameer-dudeja",
   "license": "MIT",
   "icon": "icon.png",
